@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#06205c;          /* dark anchor */
+    --navy:#06205c;
     --cyan:#23C6DC;
     --coral:#FF5252;
     --gold:#F0C148;
@@ -19,11 +19,11 @@
     --orange:#FF9A3E;
     --offwhite:#F5FFF7;
 
-    --paper:#f6f3ec;         /* warm off-white background */
-    --paper-2:#efeae0;       /* slightly deeper paper for panels */
+    --paper:#f6f3ec;
+    --paper-2:#efeae0;
     --ink:#06205c;
-    --ink-soft:#1B4298;      /* muted navy for secondary text */
-    --hair:#d9d2c4;          /* hairline rules */
+    --ink-soft:#1B4298;
+    --hair:#d9d2c4;
 
     --r:0;
     --maxw:1440px;
@@ -45,24 +45,12 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   a{color:inherit}
 
-  /* tiny mono label used for metadata/kickers */
   .mono{font-family:"Geist Mono",monospace;font-weight: 400;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
 
-  /* ========================================================================
-     INTRO / LANDING - self-contained.
-     Every selector below is scoped to #intro and depends on nothing but the
-     :root design tokens. The directory uses none of these rules and this
-     block uses none of the directory's, so the intro (this CSS block, the
-     <section id="intro"> markup, and the INTRO JS block at the end of the
-     script) lifts into its own index.html as one copy-paste, with the
-     directory moved to hub.html. See the INTRO JS block for the two hrefs
-     that would need repointing.
-     ======================================================================== */
   #intro{--gap:clamp(32px,3.4vw,52px);display:block}
   #intro .in{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   #intro .band{padding:var(--gap) 0 0}
 
-  /* the spectrum motif, reused as a section divider */
   #intro .spectrum{display:flex;height:6px;border-radius:99px;overflow:hidden}
   #intro .spectrum span{flex:1;transform:scaleX(0);transform-origin:left;animation:introGrow .6s var(--ease) forwards}
   #intro .spectrum span:nth-child(1){background:var(--cyan);animation-delay:.15s}
@@ -73,7 +61,6 @@
   #intro .rule{height:4px;margin:var(--gap) 0 0}
   @keyframes introGrow{to{transform:scaleX(1)}}
 
-  /* ---- 1. hero ---- */
   #intro .hero{padding:32px 0 0}
   #intro .hero-top{display:flex;justify-content:flex-end;align-items:center;margin-bottom:18px}
   #intro .logo{height:58px;width:51px;display:block;flex:none}
@@ -100,7 +87,6 @@
   #intro .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px -10px var(--navy)}
   #intro .btn svg{width:15px;height:15px;stroke:currentColor;fill:none}
 
-  /* ---- shared section furniture ---- */
   #intro .eyebrow{
     font-family:"Geist Mono",monospace;font-weight:400;font-size:12px;
     letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px;
@@ -112,7 +98,6 @@
   }
   #intro h3{font-family:"Geist Mono",monospace;font-weight:450;margin:0}
 
-  /* ---- 2. what is in here ---- */
   #intro .what{display:grid;grid-template-columns:repeat(auto-fit,minmax(212px,1fr));gap:14px}
   #intro .what a{
     display:block;text-decoration:none;color:inherit;
@@ -130,13 +115,11 @@
   #intro .what h3{font-size:14px;margin:13px 0 7px;letter-spacing:0}
   #intro .what p{margin:0;font-size:14px;line-height:1.35;color:var(--ink-soft)}
 
-  /* ---- 3. ways to use it ---- */
   #intro .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:26px 24px}
   #intro .ways article{border-top:2px solid var(--c);padding:16px 0 0}
   #intro .ways h3{font-size:16px;margin:0 0 9px}
   #intro .ways p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.38}
 
-  /* ---- 4. how to use the directory ---- */
   #intro .how{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:44px;align-items:start}
   #intro .how p{margin:0 0 15px;font-size:16.5px;line-height:1.42;max-width:90ch}
   #intro .how p:last-child{margin-bottom:0}
@@ -148,7 +131,7 @@
   }
   #intro .facetlist dd{margin:0;font-size:14.5px}
 
-  /* ---- 5. featured findings ---- */
+  /* featured findings */
   #intro .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px}
   #intro .stats a{
     display:flex;flex-direction:column;justify-content:space-between;gap:18px;
@@ -170,7 +153,7 @@
   }
   #intro .stats .src svg{width:12px;height:12px;stroke:currentColor;fill:none;flex:none}
 
-  /* ---- 6. feedback ---- */
+  /* feedback */
   #intro .feedback{
     background:var(--paper-2);border:1px solid var(--hair);border-radius:var(--r);
     padding:clamp(26px,3.4vw,40px);
@@ -186,7 +169,7 @@
   }
   #intro .ghostbtn:hover{background:var(--navy);color:var(--paper)}
 
-  /* ---- 7. credit ---- */
+  /* 7. credit ---- */
   #intro .credit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
   #intro .credit p{margin:0 0 12px;font-size:15px;line-height:1.42;color:var(--ink-soft)}
   #intro .credit p:last-child{margin-bottom:0}
@@ -213,10 +196,7 @@
     #intro .spectrum span{transform:none}
   }
 
-  /* ------------------------------ LAYOUT SHELL ----------------------------- */
-  /* Below 1100px the controls are the original full-bleed sticky bar. At
-     >=1100px .shell becomes a two-column grid and the controls become a
-     sticky left rail. Nothing here is shared with the intro block. */
+  /* layout */
   .shell{display:block}
   .controls{
     position:sticky;top:0;z-index:20;
@@ -240,7 +220,7 @@
   .search input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px color-mix(in srgb,var(--cyan) 30%,transparent)}
   .search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--ink-soft)}
 
-  /* mobile-only disclosure for the whole facet set */
+  /* mobile */
   .filters-toggle{
     display:none;align-items:center;gap:9px;align-self:flex-start;
     font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;
@@ -262,7 +242,7 @@
 
   .chips{display:flex;flex-wrap:wrap;gap:7px}
   .chips[hidden]{display:none}
-  /* second tier of the Place facet, revealed when its parent is selected */
+  /* second tier revealed when parent selected */
   .chips-sub{display:flex;flex-direction:column;gap:7px}
   .chips-sub .chips{padding-left:13px;border-left:2px solid color-mix(in srgb,var(--coral) 50%,transparent)}
   .chip{
@@ -274,15 +254,13 @@
   .chip .n{opacity:.75}
   .chip:hover{border-color:var(--navy);color:var(--ink)}
   .chip:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
-  /* Selected state. Navy on coral measures 4.81:1, which clears WCAG AA for
-     normal text; white on coral would be 3.19:1 and fail. Colour alone is not
-     the only signal: a check glyph and a weight change carry it too. */
+  /* selected state */
   .chip[aria-pressed="true"]{background:var(--coral);color:var(--navy);border-color:var(--coral);font-weight:600}
   .chip[aria-pressed="true"]::before{content:"\2713";font-size:11px;line-height:1;font-weight:700}
   .chip[aria-pressed="true"] .n{opacity:.8}
   .chip[aria-pressed="true"]:hover{border-color:var(--navy)}
 
-  /* -------------------------- ACTIVE FILTER SUMMARY ------------------------ */
+  /* active filter */
   .active{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:24px 0 0}
   .active[hidden]{display:none}
   .active-lbl{color:var(--ink-soft);margin-right:2px}
@@ -307,7 +285,7 @@
   }
   .clear-all:hover{color:var(--ink)}
 
-  /* ------------------------------ RESULT BAR ------------------------------- */
+  /* result */
   .resultbar{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;padding:24px 0 6px}
   .count{color:var(--ink-soft);font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0;padding:0}
   .bulk{display:flex;align-items:center;gap:9px;font-family:"Geist Mono",monospace;font-size:12px;color:var(--ink-soft)}
@@ -317,7 +295,7 @@
   }
   .linkbtn:hover{color:var(--ink)}
 
-  /* --------------------------------- LIST ---------------------------------- */
+  /* list */
   .list{padding-bottom:80px;border-top:1px solid var(--hair)}
   .item{border-bottom:1px solid var(--hair);opacity:0;transform:translateY(14px);animation:rise .5s var(--ease) forwards}
   @keyframes rise{to{opacity:1;transform:none}}
@@ -339,14 +317,13 @@
   .row:hover .titleblock h3{color:var(--accent)}
   .titleblock .by{display:block;margin-top:6px;color:var(--ink-soft);font-size:14px}
 
-  /* status badge */
   .badge{
     font-family:"Geist Mono", monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
     padding:6px 11px;border-radius:99px;white-space:nowrap;
     color:var(--navy);background:color-mix(in srgb,var(--accent) 26%,var(--paper));
     border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);
   }
-  /* the expand control */
+  /* expand */
   .toggle{
     width:34px;height:34px;border-radius:50%;border:1px solid var(--hair);
     display:grid;place-items:center;transition:all .25s var(--ease);flex:none;
@@ -356,12 +333,9 @@
   .item.open .toggle{background:var(--navy);border-color:var(--navy)}
   .item.open .toggle svg{stroke:var(--paper);transform:rotate(45deg)}
 
-  /* expanding panel - animated with grid-template-rows */
   .panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
   .item.open .panel{grid-template-rows:1fr}
-  /* visibility, not just clipping: a clipped panel keeps its links in the tab
-     order, so keyboard users hit an invisible "Download PDF" between every row.
-     The delay holds visibility until the collapse animation has finished. */
+  /* visibility */
   .panel-inner{overflow:hidden;visibility:hidden;transition:visibility 0s linear .45s}
   .item.open .panel-inner{visibility:visible;transition-delay:0s}
   .panel-pad{
@@ -372,7 +346,7 @@
   .item.open .panel-pad{opacity:1;transform:none}
   .summary{font-size:17px;color:var(--ink);margin:0 0 22px;max-width:52ch}
 
-  /* key-finding pull quote */
+  /* key finding quote */
   .finding{
     border-left:3px solid var(--accent);
     padding:14px 0 14px 20px;margin:0 0 26px;
@@ -382,14 +356,13 @@
   .finding .lbl{display:block;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.1em;
     text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;font-weight:500}
 
-  /* meta grid */
+  /* grid */
   .facts{display:grid;gap:0;align-self:start}
   .fact{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--hair)}
   .fact:first-child{border-top:0}
   .fact dt{font-family:"Geist Mono",monospace;font-weight: 400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
   .fact dd{margin:0;font-size:14.5px}
 
-  /* link / action */
   .action{margin-top:6px}
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -411,7 +384,6 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
 
   /* responsive */
-  /* >=1100px: filters become a sticky left rail, results sit to the right. */
   @media (min-width:1100px){
     .shell{
       display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;align-items:start;
@@ -437,7 +409,6 @@
     .panel-pad{grid-template-columns:1fr;gap:26px;padding:4px 4px 30px 4px}
     .filter-group{grid-template-columns:1fr;gap:6px}
     .filter-label{padding-top:0}
-    /* whole facet set collapses behind the Filters (n) disclosure */
     .filters-toggle{display:inline-flex}
     .filters{display:none}
     .filters.open{display:flex;gap:14px;padding-top:2px}
@@ -452,7 +423,7 @@
 
 <section id="intro">
 
-  <!-- 1. hero -->
+  /* hero */
   <header class="hero">
     <div class="in">
       <div class="hero-top">
@@ -461,7 +432,7 @@
       <h1>Houston Arts Data Resource Hub</h1>
       <p class="stand">A single, public home for the studies, surveys, dashboards, and maps that report on Houston's arts sector, built to make the data easy to find, cite, and share.</p>
       <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-      <!-- count is live off RESOURCES; the month comes from UPDATED in the script -->
+      /* count based on Resources part */
       <p class="meta" id="introMeta">Loading the collection</p>
       <p class="cta"><a class="btn" href="#directory">Browse the resources <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></p>
     </div>
@@ -469,7 +440,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 2. what is in here -->
+  /* what is even in here */
   <section class="band" aria-labelledby="in-what">
     <div class="in">
       <p class="eyebrow">What's in here</p>
@@ -481,7 +452,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 3. ways to use it -->
+  /* ways to use it */
   <section class="band" aria-labelledby="in-ways">
     <div class="in">
       <p class="eyebrow">Ways to use it</p>
@@ -509,7 +480,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 4. how to use the directory -->
+  /* how to use this specific thing */
   <section class="band" aria-labelledby="in-how">
     <div class="in">
       <p class="eyebrow">How to use the directory</p>
@@ -534,7 +505,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 5. featured findings -->
+  /* featured findings */
   <section class="band" aria-labelledby="in-stats">
     <div class="in">
       <p class="eyebrow">Featured findings</p>
@@ -546,7 +517,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 6. feedback and contributions -->
+  /* feedback and contributions */
   <section class="band" aria-labelledby="in-feedback">
     <div class="in">
       <p class="eyebrow">Feedback and contributions</p>
@@ -563,7 +534,7 @@
 
     <div class="in"><div class="spectrum rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
 
-  <!-- 7. credit -->
+  /* credit */
   <section class="band close" aria-labelledby="in-credit">
     <div class="in">
       <p class="eyebrow">Who's behind this</p>
@@ -673,18 +644,15 @@
 </footer>
 
 <script>
-/* ---------------------------------------------------------------------------
-   DATA - originally seeded from Resources_for_Hub.xlsx; entries have been
-   added, edited, and removed since.
-   link / linkType drive the call-to-action state.
+/* note data originally seeded from my xlsx but entries were added, edited, removed ever since.
+   linkType drive the call-to-action state
      external  -> opens a real URL
      pdf       -> downloadable PDF (hosted file or direct link)
      request   -> available upon request
      internal  -> internal only
      soon      -> published/forthcoming but no URL supplied yet
 --------------------------------------------------------------------------- */
-/* The one hand-maintained value on the page. Everything else is derived
-   from RESOURCES. Update this at each publish. */
+/* remember to update this each publish pls */
 const UPDATED = "August 2026";
 
 const STATUS = {
@@ -941,11 +909,7 @@ const RESOURCES = [
    updated:"Annual federal release; current edition covers 1998 to 2023", steward:"National Endowment for the Arts, with the Bureau of Economic Analysis"}
 ];
 
-/* ---------------------------------------------------------------------------
-   TAGS - curated Focus, Methods, and Place tags for each resource, keyed by
-   exact title. Filters read from these
-   tags. RESOURCES above is untouched. To re-tag anything, edit a row here.
---------------------------------------------------------------------------- */
+/* tags */
 const TAGS = {
   "2021 Greater Houston Artist Survey":                                       {focus:["Artists and workforce"], methods:["Survey"], place:["Greater Houston"], format:["Report"]},
   "Arts & Economic Prosperity 6":                                             {focus:["Organizations","Audiences and public"], methods:["Survey","Data analysis"], place:["Greater Houston","Harris County","City of Houston"], format:["Report"]},
@@ -983,11 +947,7 @@ const TAGS = {
   "HouArts in Action Messaging Guide":                                        {focus:["Artists and workforce","Organizations"], methods:["Guide"], place:["Greater Houston"], format:["Toolkit or guide"]},
   "HouArts in Action: Key Stats and Data Sources":                            {focus:["Organizations"], methods:["Data analysis"], place:["Greater Houston"], format:["Directory or calendar"]}
 };
-/* ---------------------------------------------------------------------------
-   PLACE TAXONOMY - two tiers, in the shape of EHF's "geographic level".
-   TAGS carries the most specific value available for a record; membership of
-   the parent is derived here rather than duplicated in the data.
---------------------------------------------------------------------------- */
+/* place taxonomy */
 const PLACE_TREE = {
   "Houston region":["Greater Houston","Harris County","City of Houston","HISD campuses"],
   "Texas":[],
@@ -1003,14 +963,13 @@ RESOURCES.forEach(r=>{
   r._methods = t.methods || [];
   r._format  = t.format  || [];
   r._place   = t.place   || [];
-  /* expand each place tag upward so a child implicitly matches its parent */
+  /* expand each place tag up so child implicitly matches parent */
   const set = new Set();
   r._place.forEach(v=>{ set.add(v); if(PLACE_PARENT[v]) set.add(PLACE_PARENT[v]); });
   r._placeAll = [...set];
 });
 
-/* Publication year as buckets. Individual years would produce fourteen chips
-   with one item each. */
+/* year as buckets bc indiv years makes like fourteen chips */
 function yearBucket(y){
   if(y>=2026) return "2026";
   if(y===2025) return "2025";
@@ -1019,7 +978,7 @@ function yearBucket(y){
   return "Before 2020";
 }
 
-/* ------------------------------- rendering ------------------------------- */
+/* rendering */
 const list          = document.getElementById('list');
 const searchEl      = document.getElementById('search');
 const countEl       = document.getElementById('count');
@@ -1032,8 +991,6 @@ const filterCountEl = document.getElementById('filterCount');
 let query = "";
 let queryRaw = "";
 
-/* Single-select dimensions, each defaulting to "All". They AND together and
-   combine with the search box. `key` doubles as the URL query parameter. */
 const DIMENSIONS = [
   { key:'access', label:'Access', el:document.getElementById('chips-access'),
     order:["All","Public","Upcoming","Upon request"],
@@ -1056,8 +1013,6 @@ const DIMENSIONS = [
     active:"All", tags:r=>[yearBucket(r.year)] }
 ];
 
-/* Counts are over the whole collection, not the current result set, so a chip
-   never reads zero and the numbers stay stable as you filter. */
 function tagCount(dim,val){
   return val==="All" ? RESOURCES.length : RESOURCES.filter(r=>dim.tags(r).includes(val)).length;
 }
@@ -1091,8 +1046,6 @@ DIMENSIONS.forEach(dim=>{
   }
 });
 
-/* Chips are built once and only repainted, so keyboard focus survives a
-   selection. */
 function paintDim(dim){
   let activeParent = null;
   if(dim.tree){
@@ -1117,9 +1070,7 @@ function setActive(dim,v,rerender=true){
   if(rerender){ syncURL(); render(); }
 }
 
-/* ------------------------- deep-linkable filter state -------------------- */
-/* replaceState rather than pushState so filtering does not fill the back
-   stack. Wrapped because some browsers refuse history writes on file:// */
+/* replaceState rather than pushState so filtering does not fill back stack plus it is wrapped bc some browsers refuse history writes on file:// */
 function syncURL(){
   const p=new URLSearchParams();
   DIMENSIONS.forEach(d=>{ if(d.active!=="All") p.set(d.key,d.active); });
@@ -1142,7 +1093,7 @@ function readURL(){
   if(q){ searchEl.value=q; queryRaw=q; query=q.trim().toLowerCase(); }
 }
 
-/* --------------------- active filter summary and tokens ------------------ */
+/* active filter summary and tokens */
 function activeDims(){ return DIMENSIONS.filter(d=>d.active!=="All"); }
 
 function renderActive(){
@@ -1178,7 +1129,7 @@ document.getElementById('clearAll').addEventListener('click',()=>{
   syncURL(); render();
 });
 
-/* ------------------------------ disclosures ------------------------------ */
+/* disclosures */
 filtersToggle.addEventListener('click',()=>{
   const open=filterPanel.classList.toggle('open');
   filtersToggle.setAttribute('aria-expanded',open);
@@ -1200,7 +1151,7 @@ const icons = {
   external:'<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>'
 };
 
-/* mirrored locally in the INTRO JS block; keep the two in step */
+/* mirrored locally in the INTRO JS block; keep the two dancing */
 function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
 function actionHTML(r){
@@ -1292,25 +1243,14 @@ readURL();
 DIMENSIONS.forEach(paintDim);
 render();
 
-/* ===========================================================================
-   INTRO / LANDING - self-contained.
-   Reads from RESOURCES; writes only inside #intro. Every number rendered here
-   is derived, none is typed in.
-
-   If the intro is ever split into its own index.html with the directory moved
-   to hub.html, this block moves with it and two things change: the DIRECTORY
-   constant below, and the fact that applyFacet/jumpTo will no longer find a
-   directory in the document, at which point the plain hrefs take over and the
-   browser navigates instead. Nothing else here touches the directory.
-   =========================================================================== */
+/* intro landing which is self contained; reads from Resources; writes only inside #intro. NOTE if intro ever split into its own index.html, two things change: the DIRECTORY constant below, and the fact that applyFacet/jumpTo will no longer find a directory in the doc. Nothing else here touches the directory. */
 (function(){
   const introEl = document.getElementById('intro');
   if(!introEl) return;
 
   const DIRECTORY = "index.html";   /* becomes "hub.html" if the page is split */
 
-  /* mirrors slugify() in the directory render; kept local so the intro has no
-     dependency on it */
+  /* mirrors slugify() in directory render; kept local so intro has no dependency on it */
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   const countBy = (get,...vals) => RESOURCES.filter(r=>vals.some(v=>get(r).includes(v))).length;
   const byPlace  = r => r._placeAll;
@@ -1319,9 +1259,7 @@ render();
   document.getElementById('introMeta').textContent =
     RESOURCES.length + ' resources · Updated ' + UPDATED;
 
-  /* ---- 2. what is in here ---------------------------------------------- */
-  /* Each card counts exactly one facet value and links to that same value, so
-     the number on the card is always the number of rows you land on. */
+  /* what is in here exactly */
   const WHAT = [
     {c:'var(--cyan)',   key:'place',  value:'Houston region', h:'Houston and Harris County',
      p:'Studies of the city, the county, the school district, and the wider metro.'},
@@ -1350,9 +1288,7 @@ render();
     whatEl.appendChild(a);
   });
 
-  /* ---- 5. featured findings -------------------------------------------- */
-  /* Named by title, so a card follows its record if the finding is rewritten
-     and disappears rather than going stale if the record is removed. */
+  /* featured findings by title */
   const FEATURED = [
     "Arts & Economic Prosperity 6",
     "2021 Greater Houston Artist Survey",
@@ -1373,9 +1309,7 @@ render();
     statsEl.appendChild(a);
   });
 
-  /* ---- in-page enhancement --------------------------------------------- */
-  /* When the directory is on this page, filter in place instead of reloading.
-     When it is not (split deployment), do nothing and let the href navigate. */
+  /* in page enhancement */
   introEl.addEventListener('click', e=>{
     const a = e.target.closest('a[data-facet],a[data-record]');
     if(!a) return;
